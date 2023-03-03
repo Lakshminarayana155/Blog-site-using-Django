@@ -1,0 +1,28 @@
+{% extends 'basics.html' %}
+
+{% block contactactive %}active{% endblock contactactive %}
+{% block title %}Contact{% endblock title %}
+{% block body %}
+ <h3 style="margin-top: 5px"> Welcome to the contact page</h3>
+ <form action='\contact' method="post">
+     {% csrf_token %}
+ <div class="form-group">
+    <label for="name">Name</label> 
+    <input type="text" class="form-control" id="name" name="name" aira-describedby="name">
+ </div>
+ <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="uemail", name="uemail">
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone</label>
+    <input type="tel" class="form-control" id="phoneno" name="phoneno">
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment:</label>
+    <textarea class="form-control" rows="5" id="comment" name="comment"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary" style="margin-top: 3px">Submit</button>
+</form>
+{% endblock body %}
+
